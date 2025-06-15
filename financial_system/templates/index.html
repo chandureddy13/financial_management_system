@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 Financial Management System</h1>
+            <div class="summary-cards" id="summary-cards">
+                <div class="card">
+                    <h3>Total Income</h3>
+                    <p id="total-income">$0.00</p>
+                </div>
+                <div class="card">
+                    <h3>Total Expenses</h3>
+                    <p id="total-expenses">$0.00</p>
+                </div>
+                <div class="card">
+                    <h3>Balance</h3>
+                    <p id="balance">$0.00</p>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('transactions')">Transactions</button>
+                <button class="tab-btn" onclick="showTab('budgets')">Budgets</button>
+                <button class="tab-btn" onclick="showTab('advice')">AI Advice</button>
+            </div>
+
+            <!-- Transactions Tab -->
+            <div id="transactions" class="tab-content active">
+                <h2>Add Transaction</h2>
+                <form id="transaction-form" class="form-container">
+                    <select id="transaction-type" required>
+                        <option value="">Select Type</option>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                    
+                    <input type="number" id="transaction-amount" placeholder="Amount" step="0.01" required>
+                    
+                    <select id="transaction-category" required>
+                        <option value="">Select Category</option>
+                        <option value="food">Food</option>
+                        <option value="transport">Transport</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="utilities">Utilities</option>
+                        <option value="salary">Salary</option>
+                        <option value="freelance">Freelance</option>
+                        <option value="other">Other</option>
+                    </select>
+                    
+                    <input type="text" id="transaction-description" placeholder="Description" required>
+                    <input type="date" id="transaction-date" required>
+                    
+                    <button type="submit">Add Transaction</button>
+                </form>
+
+                <h2>Recent Transactions</h2>
+                <div id="transactions-list" class="list-container"></div>
+            </div>
+
+            <!-- Budgets Tab -->
+            <div id="budgets" class="tab-content">
+                <h2>Create Budget</h2>
+                <form id="budget-form" class="form-container">
+                    <select id="budget-category" required>
+                        <option value="">Select Category</option>
+                        <option value="food">Food</option>
+                        <option value="transport">Transport</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="utilities">Utilities</option>
+                        <option value="other">Other</option>
+                    </select>
+                    
+                    <input type="number" id="budget-limit" placeholder="Monthly Limit" step="0.01" required>
+                    <input type="month" id="budget-month" required>
+                    
+                    <button type="submit">Create Budget</button>
+                </form>
+
+                <h2>Active Budgets</h2>
+                <div id="budgets-list" class="list-container"></div>
+            </div>
+
+            <!-- AI Advice Tab -->
+            <div id="advice" class="tab-content">
+                <h2>Get Financial Advice</h2>
+                <div class="advice-container">
+                    <textarea id="advice-query" placeholder="Ask me anything about your finances..." rows="4"></textarea>
+                    <button onclick="getAdvice()">Get AI Advice</button>
+                    
+                    <div id="advice-response" class="advice-response"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

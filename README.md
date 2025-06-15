@@ -1,27 +1,41 @@
-# financial_management_system
+# 💸 Financial Management System
 
-# Server Configuration
-PORT=5000
-NODE_ENV=development
+A personal finance management web application built using **Flask** that helps users manage their incomes, expenses, and financial goals. This project is ideal for beginners looking to understand full-stack web development with Flask, REST APIs, and environment management.
 
-# Database
-MONGODB_URI=mongodb://localhost:27017/ai-chat-app
-# OR for MongoDB Atlas:
-# MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/ai-chat-app
+---
 
-# JWT Configuration
-JWT_SECRET=your-super-secret-jwt-key-here
-JWT_EXPIRE=7d
+## 📌 Features
 
-# Groq API Configuration
-GROQ_API_KEY=your-groq-api-key-here
+- ✅ Add, update, and delete income and expense records
+- 📊 View total income, expenses, and current balance
+- 📅 Filter records by date or category
+- 🔐 Secure API endpoints with environment variables
+- 🌐 CORS enabled for frontend-backend interaction
 
-# CORS Configuration
-FRONTEND_URL=http://localhost:3000
+---
 
-# File Upload Configuration
-MAX_FILE_SIZE=10485760
-ALLOWED_FILE_TYPES=.pdf,.txt,.docx,.md
+## 🛠️ Tech Stack
 
-REACT_APP_API_URL=http://localhost:5000/api
-REACT_APP_SOCKET_URL=http://localhost:5000
+| Category       | Technology            |
+|----------------|------------------------|
+| Backend        | Flask (Python)         |
+| REST API       | Flask + Flask-CORS     |
+| Environment    | python-dotenv          |
+| Requests       | `requests` library     |
+| Deployment     | Localhost (dev mode)   |
+
+---
+
+## 🚀 Installation & Setup
+
+### Prerequisites
+
+- Python 3.10+
+- `pip`
+- `git`
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/chandureddy13/financial_management_system.git
+cd financial_management_system/financial_system
